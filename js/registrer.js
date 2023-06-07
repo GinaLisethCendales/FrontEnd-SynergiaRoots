@@ -1,4 +1,3 @@
-import config from './config.js';
 //1-Obtener formulario y almacenarlo en uma variable js
 const registrerForm = document.querySelector('#formRegistroUsuario');
 //b.Obtener botón de submit

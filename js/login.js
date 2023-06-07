@@ -1,5 +1,3 @@
-import config from './config.js';
-
 //1a- guardo el formulario en una variable
 const loginForm = document.getElementById('loginForm');
 
