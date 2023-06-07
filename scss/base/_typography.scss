@@ -1,0 +1,19 @@
+// @import url('https://fonts.googleapis.com/css2? family= Space+Grotesk:wght@300 & display=swap');
+@font-face {
+    font-family: GeometosNeueLight;
+    src: url(../fonts/GeometosNeueLight.ttf);
+  }
+  
+  @font-face {
+    font-family: GeometosNeueBlack;
+    src: url(../fonts/GeometosNeueBlack.ttf);
+  }
+  
+  @font-face {
+    font-family: GeometosNeueBold;
+    src: url(../fonts/GeometosNeueBold.ttf);
+  }
+body{
+    font-family: 'GeometosNeueLight', Helvetica, sans-serif;
+}
+

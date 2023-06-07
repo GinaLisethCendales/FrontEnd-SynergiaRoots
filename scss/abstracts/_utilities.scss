@@ -1,0 +1,46 @@
+.flex{
+    display:flex;
+}
+
+.hidden{
+    opacity: 0;
+    
+}
+
+//FORM
+
+.container{
+    max-width: 1081px;
+    margin: 0 auto;
+    padding: 1 rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.container [class*="-form"] {
+    padding: 2 rem;
+
+}
+
+.container [class*="-form"] input:not([type="radio"]) {
+    width: 100%;
+    font-size: 1.25 rem;
+    font-family: monospace;
+    color: rgb(48, 127, 215);
+    padding: .5rem 1rem;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 0.5rem;
+    background: #333;
+
+}
+
+.input-group{
+    margin-bottom: 1rem;
+}
+
+.input-group .radio-container{
+    padding: .25rem 1rem;
+    display: flex;
+}

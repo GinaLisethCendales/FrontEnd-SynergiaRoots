@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNERGIA ROOTS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/main.css">
+    <script type="application/json" src="/data/products.json"></script>
+    <!-- <link rel="stylesheet" href="/scss/main.css"> -->
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="/index.html" class="navbar__nav-link">
+                <img class="navbar__logo" src="/assets/images/Logo.png" alt="Logo del ecommerce">
+            </a>
+
+            <label for="menu-btn" class="navbar__menu-label">
+                <span class="navbar__menu-icon"></span>
+            </label>
+
+
+            <ul class="navbar__nav-links-container">
+                <li class="navbar__nav-item">
+                    <a href="/index.html" class="navbar__nav-link">Inicio</a>
+                </li>
+                <li class="navbar__nav-item">
+                    <a href="/pages/contact/contact.html" class="navbar__nav-link">Contacto</a>
+                </li>
+                <li class="navbar__nav-item">
+                    <a href="/pages/about-us/about-us.html" class="navbar__nav-link">Nosotros</a>
+                </li>
+                <li class="navbar__nav-item">
+                    <a href="/pages/register/register.html" class="navbar__nav-link">Registro</a>
+                </li>
+            </ul>
+            <nav class="menu" id="menu">
+                <ul class="">
+                    <li class="">
+                        <div class="user-navbar__cart-icon-container">
+                            <a href="#">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            <div class="">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/50px-Default_pfp.svg.png"
+                                    class="user-navbar__user-avatar" alt="Imagen de usuario">
+                            </div>
+                        </a>
+                        <ul class="" id="sign-in">
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+
+            <!-- TODO: avatar de la persona logueada o nombre -->
+
+
+            <input type="checkbox" class="navbar__menu-btn" id="menu-btn">
+        </nav>
+
+
+
+    </header>
+
+    <main class="main">
+        <div class="product-detail-container">
+            <div class="product-detail-image-container">
+                <img id="product-imagen" src="/assets/images/default.png" alt="" class="product-detail-image" id="product-detail-image"></img>
+            </div>
+            <div class="product-detail-description-container">
+                <h5>Category</h5>
+                <h2 id="product-nombre">Title</h2>
+                <h2 id="product-precio">Price</h2>
+                <p id="product-descripcion">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil cum laborum saepe esse. Architecto, itaque provident, eos aspernatur veritatis laboriosam dicta iusto neque est distinctio dolorum deleniti aliquam nulla molestiae!</p>
+                
+            </div>
+            <div class="product-detail-actions">
+                <div class="product-detail-cantidad">
+                    <a id="agregar" onclick="agregar()"><i class="fa-sharp fa-regular fa-plus" style="color: #4bff2bf3;"></i></a>
+                    <input id="cantidad" type="text" disabled="true"></input>
+                    <a id="disminuir" onclick="disminuir()"><i class="fa-solid fa-minus" style="color: #fe4343;"></i></a>
+
+                </div>
+                <div class="product-detail-botones">
+                    <button class="product-detail-button button-23" onclick="añadirCarrito(cantidad.value)">Añadir al carrito</button>
+                    <button class="product-detail-button button-24" onclick="irAOrdenes()"> Comprar ahora</button>
+                </div>
+            </div>
+    
+        </div>
+    </main>
+
+
+
+
+
+
+    <div class="whatsapp-container">
+        <a href="" class="whatsapp-container__link">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+    <footer class="footer">
+        <div class="footer__column">
+            <ul class="footer__contact-container">
+                <li class="footer__contact-item">
+                    <a href="#" class="footer__contact-link">
+                        <i class="fa-brands fa-facebook footer__contact-icon footer__contact-icon--facebook"></i>
+                        Facebook
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    <a href="#" class="footer__contact-link">
+                        <i class="fa-brands fa-instagram 
+                                footer__contact-icon
+                                footer__contact-icon--instagram"></i>
+                        Instagram
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    <a href="#" class="footer__contact-link">
+                        <i class="fa-brands fa-linkedin 
+                                footer__contact-icon
+                                footer__contact-icon--linkedin"></i>
+                        Linkedin
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__column">
+            <img src="/assets/images/Logo.png" alt="Company Logo" class="footer__logo" width="50">
+            <h2 class="footer__company-name" style="color: white;">
+                SYNERGIA ROOTS
+            </h2>
+        </div>
+        <div class="footer__column">
+            <ul class="footer__contact-container">
+                <li class="footer__contact-item">
+                    <a href="#" class="footer__contact-link">
+                        <i class="fa-solid fa-square-phone-flip footer__contact-icon"></i>
+                        Teléfono
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    <a href="#" class="footer__contact-link">
+                        <i class="fa-solid fa-location-dot footer__contact-icon"></i>
+                        Localización
+                    </a>
+                </li>
+                <li class="footer__contact-item">
+                    <a href="#" class="footer__contact-link">
+                        <i class="fa-solid fa-envelope footer__contact-icon"></i>
+                        Email
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </footer>
+
+    <script src="/js/product-detail.js"></script>
+    <script src="/js/header.js"></script>
+</body>
+
+</html>

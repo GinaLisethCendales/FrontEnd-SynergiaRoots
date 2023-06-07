@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "nombre": "Snacks Para Gatos JUST CBD",
+        "descripcion": "Además del cannabidiol derivado del cáñamo, nuestras golosinas para gatos con CBD están hechas con vitaminas y minerales esenciales, como ácido fólico, biotina, vitamina K y riboflavina, y vienen en sabores que dejarán satisfecho a su gato, como pavo, pollo, hígado y pescado.",
+        "precio": "90000",
+        "imagen": "/assets/category cbd mascotas/snack cats.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Baycon Para Perros",
+        "descripcion": "Si su perro está envejeciendo, nuestras golosinas de aceite de CBD para perros ayudarán a retroceder el reloj, disminuir dolencias y darles mejor calidad de vida",
+        "precio": "80000",
+        "imagen": "/assets/category cbd mascotas/bacon para perros.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Tintura De CBD Para Mascotas",
+        "descripcion": "Nuestras tinturas para mascotas de primera línea están hechas con aceite de extracto de cáñamo puro y viene en tres dosis variables de 100 mg, 250 mg y 500 mg, para que tenga la libertad de ajustar la dosis de su mascota en función de su tamaño y necesidades",
+        "precio": "120000",
+        "imagen": "/assets/category cbd mascotas/Tintura de CBD para mascotas-Tocino.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Gotas De CBD PetCalm 2%",
+        "descripcion": "Aceite de extracto de flor de cannabis ,ideal para reducir los niveles de estrés y ansiedad.Analgésico, ansiolítico y anti- inflamatori",
+        "precio": "70000",
+        "imagen": "/assets/category cbd mascotas/Gotas CBD Pet Calm 2.jpeg"
+    },
+    {
+        "id": 5,
+        "nombre": "Bong De Vidrio",
+        "descripcion": "Si quieres un bong con un diseño exclusivo te presentamos el bong poligonal que su nombre hace referencia a sus 12 lados que forman una base poligonal. Su tubo descendente hace que tus sesiones sean mucho más suaves y frescas",
+        "precio": "30000",
+        "imagen": "/assets/category parafernalia/BongVidrio.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Grinder 3 pisos",
+        "descripcion": "Esta grinder metálico de la marca Lion Rolling Circus es de tamaño pequeño y está conformada por 3 piezas, incorpora dientes afilados en forma de diamante que te permitirán moler tu hierba de manera uniforme",
+        "precio": "40000",
+        "imagen": "/assets/category parafernalia/Grinder3Pisos.jpeg"
+    },
+    {
+        "id": 7,
+        "nombre": "Pipa Tornillo En Vidrio",
+        "descripcion": "Pipa Blunt Mini 7P en vidrio con tornillo interno, esta pipa con un solo llenado carga gran cantidad y para liberar las cenizas se gira el tornillo sin fin que tiene en su interior",
+        "precio": "35000",
+        "imagen": "/assets/category parafernalia/PipatornilloVidrio.jpeg"
+    },
+    {
+        "id": 8,
+        "nombre": "Puchos Ancestrales",
+        "descripcion": "Las infusiones tienen propiedades medicinales que te ayudarán a mitigar un sinnúmero de males y de forma completamente Natural Las mezclas que te ofrecemos en puchosestán cuidadosamente elaboradas para ayudarte con diferentes padecimientos como:Estrés, Ansiedad, Dolores de Cabeza, Cólicos Menstruales, Falta de Concentración o Mal Ánimo.",
+        "precio": "25000",
+        "imagen": "/assets/category parafernalia/Puchosancestrales.jpeg"
+    },
+    {
+        "id": 9,
+        "nombre": "Batería Bras",
+        "descripcion": "La mejor batería o pila para vapear tus destilados en cualquier lugar, esta es una bateria de larga duración recargable, ademas la puedes usar con cualquier esencia que este envasada en un cartucho de rosca universal de 10 mm",
+        "precio": "50000",
+        "imagen": "/assets/category vape/Bateria Brass.jpeg"
+    },
+    {
+        "id": 10,
+        "nombre": "Cartuchos De Nicotina",
+        "descripcion": "",
+        "precio": "80000",
+        "imagen": "/assets/category cbd mascotas/bacon para perros.jpg"
+    },
+    {
+        "id": 11,
+        "nombre": "Bateria Cookies",
+        "descripcion": "La mezcla de nicotina es patentada, hecha a propósito para ser extra suave para adaptarse a los fumadores adultos que buscan cambiar el tabaco tradicional.",
+        "precio": "230000",
+        "imagen": "/assets/category vape/Bateria Cookies.jpeg"
+    },
+    {
+        "id": 12,
+        "nombre": "Vapeador De Nicotina",
+        "descripcion": "Una nueva forma de vapear sin ensuciar resistencias o recargas. Simple, satisfactorio y sigiloso es práctico para el uso diario de los fumadores adultos que buscan una alternativa viable a los cigarrillos tradicionales.",
+        "precio": "60000",
+        "imagen": "/assets/category vape/Vape de nicotina.jpeg"
+    }
+]
