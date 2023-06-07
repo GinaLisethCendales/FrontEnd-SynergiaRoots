@@ -35,7 +35,7 @@ const body = {
     password : password.value
 }
 
-axios.post(confing.apiUrl+'/users/login', body)
+axios.post(config.apiUrl+'/users/login', body)
   .then(function (response) {
     // La respuesta exitosa se maneja aquí
     

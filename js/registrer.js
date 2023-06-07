@@ -51,15 +51,15 @@ registrerForm.addEventListener('submit', (event) => {
     console.log(`sigue`)
 
 
-axios.post(config.apiUrl+'/users', user)
-  .then(function (response) {
-    // La respuesta exitosa se maneja aquí
-    console.log(response.data);
-  })
-  .catch(function (error) {
-    // Si hay un error, se maneja aquí
-    console.error(error);
-  });
+    axios.post(config.apiUrl+'/users', user)
+    .then(function (response) {
+        // La respuesta exitosa se maneja aquí
+        console.log(response.data);
+    })
+    .catch(function (error) {
+        // Si hay un error, se maneja aquí
+        console.error(error);
+    });
 
 
     //e-insertar en mi array de usuarios el nuevo user (lista de usuarios)
@@ -94,8 +94,7 @@ function checkIfUserExist(users, emailToSearch) {
         //! retorno de mi función
         return true;
     }
-
-
+}
     // userEmailExist = false;
     // //!=========Solucion1
     // users.forEach(usr => {
@@ -124,4 +123,3 @@ function checkIfUserExist(users, emailToSearch) {
     //     console.warn(`El usuario ya existe`);
     //     return;
     // }
-}
