@@ -72,6 +72,7 @@ body {
   background-color: #ffffff;
   justify-content: center;
   box-shadow: 0 30px 30px -25px rgba(65 , 51, 183, 0.25);
+  width: 350px;
 }
 .card:hover {
   
@@ -144,13 +145,14 @@ body {
 
 .card-container {
   display: grid;
-  grid-template-columns: repeat(4, minmax(250px, 1fr));
-  grid-gap: 15px;
+  grid-template-columns: repeat(2, minmax(100px, 2fr));
+  grid-gap: 35px;
   margin: 20px;
   align-items: center;
   justify-content: center;
   grid-auto-flow: row;
-  
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .card__btn-container {
@@ -279,7 +281,7 @@ body {
 }
 .navbar__logo {
   margin: 0.5px;
-  height: 45px;
+  height: 60px;
 }
 .navbar__menu-label {
   color: rgb(255, 255, 255);
@@ -408,8 +410,8 @@ body {
   color:#fff;
   text-decoration:none;
   font-weight:400;
-  font-size:15px;
-  padding:10px;
+  font-size:28px; 
+  padding: 10px;
   font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform:uppercase;
   letter-spacing:1px;
@@ -451,8 +453,15 @@ body {
  /* enlaces de los items del menu desplegable */
  
  #menu ul ul a {
-  line-height:120%;
-  padding:10px 15px;
+  display:block;
+  color:#fff;
+  text-decoration:none;
+  font-weight:400;
+  font-size:24px; 
+  padding: 10px;
+  font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform:uppercase;
+  letter-spacing:1px;
  }
  
  /* items del menu desplegable al pasar el ratón */
@@ -936,7 +945,7 @@ body {
 }
 .navbar__logo {
   margin: 0 5px;
-  height: 40px;
+  height: 60px;
 }
 .navbar__menu-label {
   color: rgb(255, 255, 255);
@@ -1015,7 +1024,7 @@ body {
   font-size: 0.575rem;
   line-height: 0.575rem;
   font-family: GeometosNeueBold;
-  padding-top: 10px;
+  padding: 10px;
 }
 .navbar__nav-link::after {
   content: "";
@@ -1040,7 +1049,7 @@ body {
   padding: 0 1rem;
 }
 .user-navbar__user-avatar {
-  width: 30px;
+  width: 35px;
   height: 30px;
 }
 .user-navbar .fa-cart-shopping {
@@ -1210,12 +1219,12 @@ body {
 }
 
 .btn-form {
-  padding: 10px;
-  width: 60px;
+  padding: 20px;
+  width: 100px;
   background-color: #F99417;
   color: #5D3891;
   cursor: pointer;
-  border: none;
+  border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .btn-form:hover {

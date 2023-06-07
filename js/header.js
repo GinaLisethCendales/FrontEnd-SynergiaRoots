@@ -3,7 +3,7 @@ const signInMenu = document.getElementById('sign-in');
 
 function renderHeaderActions() {
 
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const currentUser = JSON.parse(localStorage.getItem('token'));
     signInMenu.innerHTML = '';
     if (currentUser) {
 

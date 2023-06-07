@@ -21,39 +21,52 @@ registrerForm.addEventListener('submit', (event) => {
         return;
     }
 
-    let fecha = new Date().toLocaleDateString();
+    let _createdAt = new Date().toLocaleDateString();
     const user = {
-        nombre: el.fullName.value,
+        username: el.fullName.value,
         email: el.email.value,
         password: el.password.value,
-        email: el.email.value,
-        genero: el.gender.value,
-        rol: el.rol.value,
-        fecha: fecha
-
+        role: el.rol.value,
+        age: el.age.value,
+        birthdate: el.birthdate.value,
+        country: el.country.value,
+        gender: el.gender.value,
+        createdAt : _createdAt,
+        isActive: true
     }
     //d-Verificar si hay en el localStorage algun usuaio guardado con ese email
 
     //i-Obtener los usuarios guardados en el localStorage
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-
-    const userExist = checkIfUserExist(users, el.email.value);
+    //const users = JSON.parse(localStorage.getItem('users')) || [];
+/*
+    const userExist = checkIfUserExist(user, el.email.value);
     // existe:retorno y muestro un alert
     if (userExist) {
         alert(`El email ya existe`)
         return;
-    }
+    }*/
 
 
     // no existe:sigo con mi sintaxi s normalmente
     console.log(`sigue`)
 
 
+axios.post('http://localhost:8090/users', user)
+  .then(function (response) {
+    // La respuesta exitosa se maneja aquí
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    // Si hay un error, se maneja aquí
+    console.error(error);
+  });
+
+
     //e-insertar en mi array de usuarios el nuevo user (lista de usuarios)
-    users.push(user)
+    //users.push(user)
 
     //e-Guardarlo en el localStorage
-    localStorage.setItem('users', JSON.stringify(users)) //users ahora tiene un usuario más
+    //localStorage.setItem('users', JSON.stringify(users)) //users ahora tiene un usuario más
 
     //f-Limpiamos el formulario, podemos llevar al usuario a la pagina de login
     //a-Resetear el formulario
