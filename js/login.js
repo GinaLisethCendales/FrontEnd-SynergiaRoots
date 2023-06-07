@@ -1,3 +1,5 @@
+import config from './config.js';
+
 //1a- guardo el formulario en una variable
 const loginForm = document.getElementById('loginForm');
 
@@ -35,7 +37,7 @@ const body = {
     password : password.value
 }
 
-axios.post('http://localhost:8090/users/login', body)
+axios.post(confing.apiUrl+'/users/login', body)
   .then(function (response) {
     // La respuesta exitosa se maneja aquí
     

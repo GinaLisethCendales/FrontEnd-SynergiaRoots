@@ -1,3 +1,4 @@
+import config from './config.js';
 //1-Obtener formulario y almacenarlo en uma variable js
 const registrerForm = document.querySelector('#formRegistroUsuario');
 //b.Obtener botón de submit
@@ -51,7 +52,7 @@ registrerForm.addEventListener('submit', (event) => {
     console.log(`sigue`)
 
 
-axios.post('http://localhost:8090/users', user)
+axios.post(config.apiUrl+'/users', user)
   .then(function (response) {
     // La respuesta exitosa se maneja aquí
     console.log(response.data);
