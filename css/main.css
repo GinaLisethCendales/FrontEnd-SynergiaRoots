@@ -548,7 +548,7 @@ body {
 
 .main {
   margin-top: 60px;
-  background: linear-gradient(90deg, rgb(2, 0, 36) 9%, rgb(61, 97, 180) 100%);
+  background: #eaeef6;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -697,9 +697,9 @@ body {
 }
 
 .container-about-us {
-  background-color: #0077b6;
+  background-color: #eaeef6;
   border-radius: 10px;
-  border: 4px solid rgba(255, 166, 0, 0.774);
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -719,20 +719,32 @@ body {
 }
 .container-about-us__title-information {
   color: rgba(255, 255, 255, 0.774);
-  font-weight: 600;
-  font-size: 20px;
+  font-family: GeometosNeueLight;
+  font-weight: bold;
+  font-size: 35px;
+  color: #5D3891;
+
+  
+  
+  
 }
 .container-about-us__description-information {
   color: rgba(255, 255, 255, 0.74);
+  font-family: GeometosNeueLight;
+  color: #5D3891;
   font-weight: 600;
+  letter-spacing: 2px;
+  
 }
 .container-about-us__subtitle {
   display: flex;
+  font-family: GeometosNeueLight;
   justify-content: center;
   padding: 5px;
+  letter-spacing: 5px;
   color: rgba(255, 166, 0, 0.774);
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
 }
 .container-about-us__list {
   list-style: none;
@@ -740,13 +752,14 @@ body {
   display: flex;
   flex-direction: column;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.699);
+  color: #5D3891;
   align-items: center;
 }
 .container-about-us__list-item {
   padding: 2px;
   letter-spacing: 2px;
   margin-top: 10px;
+  font-family: GeometosNeueLight;
 }
 .container-about-us__container-img {
   padding: 1rem;
@@ -755,7 +768,7 @@ body {
   align-items: center;
 }
 .container-about-us__img {
-  width: 100%;
+  width: 70%;
 }
 
 @media screen and (min-width: 600px) {
@@ -1086,9 +1099,11 @@ body {
 }
 
 .container {
-  margin: 5px;
+  margin: 80px;
   width: 100%;
   height: auto;
+  justify-content: center;
+  display: flex;
 }
 
 textarea {
@@ -1117,6 +1132,9 @@ textarea {
   background-color: rgba(94, 92, 92, 0.36);
   width: 100%;
   padding: 5px;
+  
+  
+  
 }
 .container-form__input {
   border-radius: 5px;
@@ -1182,12 +1200,15 @@ body {
 }
 
 .titulo-form {
-  color: #E8E2E2;
-  margin-bottom: 10px;
+  color: #5D3891;;
+  margin-bottom: 20px;
+  font-family: GeometosNeueLight;
+  justify-content: center;
 }
 
 .formRegistroUsuario {
   background-color: #E8E2E2;
+  display: ;
   border-radius: 5px;
   width: 50%;
   padding: 30px;
@@ -1246,6 +1267,7 @@ title{
   text-align: center;
   padding-bottom: 0.5rem;
   font-size: 1.5rem;
+  font-family: GeometosNeueLight;
   color: #5A189A;
   text-transform: uppercase;
   font-weight: 20;

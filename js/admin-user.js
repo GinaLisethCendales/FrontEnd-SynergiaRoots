@@ -42,20 +42,47 @@ userForm.addEventListener('submit', (event) => {
 
 function cargarTabla() {
 
-    const usersLS = JSON.parse(localStorage.getItem('users')) || [];
+    const token = JSON.parse(localStorage.getItem('token')) || "";
+
+    const headers = {
+        'Authorization': `Bearer ${token}`
+      };
+
+      const usuarios = {}
+
+    axios.get(config.apiUrl+'/users', { headers })
+    .then(function (response) {
+      // La respuesta exitosa se maneja aquí
+        
+      usuarios = response.data["user"]
+
+      console.log(response.data);
+
+
+    })
+    .catch(function (error) {
+      // Si hay un error, se maneja aquí
+      console.error(error);
+  
+    });
+ 
+  
+
+
+
 
     var tabla = document.getElementById('Table');
     var contenidoTabla = '';
     tabla.innerHTML = '';
-    usersLS.forEach(function (dato) {
+    usuarios.forEach(function (dato) {
         contenidoTabla += '<tr>';
-        contenidoTabla += '<td class="item-nombre" id="item-nombre">' + dato.nombre + '</td>';
+        contenidoTabla += '<td class="item-nombre" id="item-nombre">' + dato.username + '</td>';
         contenidoTabla += '<td class="item-email">' + dato.email + '</td>';
-        contenidoTabla += '<td class="item-rol">' + dato.rol + '</td>';
-        contenidoTabla += '<td class="item-fecha">' + dato.fecha + '</td>';
-        contenidoTabla += `<td> <button class="editar" onclick="editar('${dato.nombre}')">` +
+        contenidoTabla += '<td class="item-rol">' + dato.role + '</td>';
+        contenidoTabla += '<td class="item-fecha">' + dato.createdAt || "" + '</td>';
+        contenidoTabla += `<td> <button class="editar" onclick="editar('${dato.username}')">` +
             '<i class="fa-solid fa-lg fa-pen-to-square" style="color:green;"></i></button>' +
-            `<button class="eliminar" onclick="eliminar('${dato.nombre}')">` +
+            `<button class="eliminar" onclick="eliminar('${dato.username}')">` +
             '<i class="fa-solid fa-lg fa-trash" style="color:red;"></i></button></td>';
         contenidoTabla += '</tr>';
     });
