@@ -64,10 +64,10 @@
     },
     {
         "id": 10,
-        "nombre": "Cartuchos De Nicotina",
-        "descripcion": "",
+        "nombre": "Cartuchos de nicotina",
+        "descripcion": "Producto exclusivo para mayores de edad. Este producto puede contener nicotina, una sustancia muy adictiva. Consulta su intensidad en la descripción del producto. Producto nocivo para la salud",
         "precio": "80000",
-        "imagen": "/assets/category cbd mascotas/bacon para perros.jpg"
+        "imagen": "/assets/category vape/Cartuchos de nicotina.jpeg"
     },
     {
         "id": 11,

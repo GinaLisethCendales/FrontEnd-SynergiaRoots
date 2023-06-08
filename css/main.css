@@ -400,7 +400,7 @@ body {
  /* items del menu */
  
  #menu ul li {
-  background-color:#2e518b;
+  
  }
  
  /* enlaces del menu */
@@ -429,7 +429,7 @@ body {
  /* efecto al pasar el ratón por los items del menu */
  
  #menu ul li:hover {
-  background:#5b78a7;
+  background:#F99417;
  }
 
  /* menu desplegable */
@@ -439,7 +439,7 @@ body {
   position:absolute;
   top:100%;
   left:0;
-  background:#eee;
+  background:#F99417;
   padding:0;
  }
  
@@ -1076,8 +1076,9 @@ body {
   }
 }
 .main-contact {
-  margin-top: 70px;
-  background: linear-gradient(90deg, rgb(2, 0, 36) 9%, rgb(61, 97, 180) 100%);
+  margin-top: 60px;
+  padding: 60px;
+  background: #eaeef6;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1102,7 +1103,7 @@ textarea {
   padding: 5px;
   font-size: 12px;
   font-weight: 600;
-  color: #F99417;
+  color: #5D3891;
 }
 
 .title {
@@ -1245,7 +1246,7 @@ title{
   text-align: center;
   padding-bottom: 0.5rem;
   font-size: 1.5rem;
-  color: white;
+  color: #5A189A;
   text-transform: uppercase;
   font-weight: 20;
   border-bottom: solid 1.5px rgb(123, 145, 91);
