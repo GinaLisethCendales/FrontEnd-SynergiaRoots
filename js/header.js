@@ -3,7 +3,7 @@ const signInMenu = document.getElementById('sign-in');
 
 function renderHeaderActions() {
 
-    const currentUser = JSON.parse(localStorage.getItem('token'));
+    const currentUser = localStorage.getItem('token');
     signInMenu.innerHTML = '';
     if (currentUser) {
 
@@ -27,7 +27,7 @@ function renderHeaderActions() {
 }
 
 function logout() {
-    localStorage.removeItem('currentUser');
+    localStorage.removeItem('token');
     renderHeaderActions();
 }
 

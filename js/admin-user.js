@@ -1,13 +1,14 @@
-window.onload = function () {
-    cargarTabla();
+window.onload = async function () {
+    await cargarTabla();
 }
 
 //obtener boton y formulario
 const userForm = document.getElementById('RegisterUser');
 const userBtn = document.getElementById('submitbtn');
+const editarBtn = document.getElementById('editarbtn');
 
 //agregar evento submit a boton 
-userForm.addEventListener('submit', (event) => {
+userForm.addEventListener('submit', async (event) => {
 
     console.log(`Submit event`)
 
@@ -21,109 +22,87 @@ userForm.addEventListener('submit', (event) => {
 
 
     const user = {
-        nombre: el.nombre.value,
+        username: el.nombre.value,
         email: el.email.value,
-        rol: el.rol.value,
-        fecha: fecha
+        role: el.rol.value,
+        createdAt: fecha,
     }
 
-    //i-Obtener los usuarios guardados en el localStorage
-    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const responseBackend = await requestBackend('/users','post',true, user)
+    if(responseBackend){
+        cargarTabla()
+        showAlert('Usuario registrado correctamente.')
+        editarBtn.id = "";
+    }
+    else{
+        showAlert('Ha ocurrido un error inesperado.', 'error')
+    }
 
-
-    users.push(user)
-
-    //e-Guardarlo en el localStorage
-    localStorage.setItem('users', JSON.stringify(users)) //users ahora tiene un usuario más
     userForm.reset()
     showAlert('el user se agrego exitosamente', 'sucess')
     cargarTabla();
 })
 
-function cargarTabla() {
+async function cargarTabla() {
 
-    const token = JSON.parse(localStorage.getItem('token')) || "";
-
-    const headers = {
-        'Authorization': `Bearer ${token}`
-      };
-
-      const usuarios = {}
-
-    axios.get(config.apiUrl+'/users', { headers })
-    .then(function (response) {
-      // La respuesta exitosa se maneja aquí
-        
-      usuarios = response.data["user"]
-
-      console.log(response.data);
-
-
-    })
-    .catch(function (error) {
-      // Si hay un error, se maneja aquí
-      console.error(error);
-  
-    });
- 
-  
-
-
-
-
+    const responseBackend = await requestBackend('/users/table','get',true)
     var tabla = document.getElementById('Table');
-    var contenidoTabla = '';
+    var contenidoTabla = responseBackend;
     tabla.innerHTML = '';
-    usuarios.forEach(function (dato) {
-        contenidoTabla += '<tr>';
-        contenidoTabla += '<td class="item-nombre" id="item-nombre">' + dato.username + '</td>';
-        contenidoTabla += '<td class="item-email">' + dato.email + '</td>';
-        contenidoTabla += '<td class="item-rol">' + dato.role + '</td>';
-        contenidoTabla += '<td class="item-fecha">' + dato.createdAt || "" + '</td>';
-        contenidoTabla += `<td> <button class="editar" onclick="editar('${dato.username}')">` +
-            '<i class="fa-solid fa-lg fa-pen-to-square" style="color:green;"></i></button>' +
-            `<button class="eliminar" onclick="eliminar('${dato.username}')">` +
-            '<i class="fa-solid fa-lg fa-trash" style="color:red;"></i></button></td>';
-        contenidoTabla += '</tr>';
-    });
-
     tabla.innerHTML += contenidoTabla;
-
+    editarBtn.style.display = 'none';
 }
 
-function editar(_nombre) {
+async function ActualizarUsuario(_id) {
 
-    var id = _nombre;
-    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const UpdatedUser  = {
+        username: document.getElementById('nombreinput').value,
+        email: document.getElementById('emailinput').value,
+        role: document.getElementById('rolinput').value
+    }
 
-    var item = users.filter(function (user) {
-        return user.nombre == id;
-    });
+    const responseBackend = await requestBackend('/users/'+_id, 'put', true, UpdatedUser, 'user')
 
-    const nombre = document.getElementById('nombreinput');
-    const email = document.getElementById('emailinput');
-    const rol = document.getElementById('rolinput');
+    if(responseBackend){
+        cargarTabla()
+        showAlert('Usuario actualizado correctamente.')
+        editarBtn.id = "";
+    }
+    else{
+        showAlert('Ha ocurrido un error inesperado.', 'error')
+    }
+}
 
+async function editar(_id){ 
 
-    nombre.value = item[0].nombre;
-    email.value = item[0].email;
-    rol.value = item[0].rol;
+    editarBtn.id = "";
+    const fila = document.getElementById(`${_id}`);
 
+    const nombre = fila.cells[0].textContent;
+    const email= fila.cells[1].textContent;
+    const rol = fila.cells[1].textContent;
 
-    // Código que se ejecutará cuando se haga clic en el icono
+    document.getElementById('nombreinput').value = nombre;
+    document.getElementById('emailinput').value = email;
+    document.getElementById('rolinput').value = rol;
+
+    editarBtn.style.display = 'block';
+    editarBtn.id = _id;
 }
 
 // eliminar registro del localstorage
-function eliminar(_nombre) {
+async function eliminar(_id) {
 
-    var id = _nombre
-    const users = JSON.parse(localStorage.getItem('users')) || []
+    const responseBackend = await requestBackend('/users/'+_id, 'delete', true)
 
-    var items = users.filter(function (user) {
-        return user.nombre != id;
-    })
+    if(responseBackend){
+        cargarTabla()
+        showAlert('Usuario eliminado correctamente.')
+        editarBtn.id = "";
+    }
+    else{
+        showAlert('Ha ocurrido un error inesperado.', 'error')
+    }
 
-
-    localStorage.setItem('users', JSON.stringify(items))
     cargarTabla()
 }
