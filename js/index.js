@@ -1,76 +1,23 @@
-let productos = [];
+window.onload = async function () {
+    
+    renderizarProductos(await cargarProductos());
+}
+
 
 async function cargarProductos() {
     try {
-        const response = await fetch('./data/products.json');
-        const data = await response.json();
-        console.log(data);
-        return data;
+        const response = await requestBackend('/products/cards','get')
+        return response;
     } catch (error) {
         console.log(error);
+        return "";
     }
 }
 
-cargarProductos().then(data => {
-    productos = data;
-    localStorage.setItem("products", JSON.stringify(productos));
-    console.log(productos);
-    // Aquí puedes realizar acciones después de cargar los productos.
-});
-
-
-
-const cardContainer = document.querySelector('.card-container');
-
-const productsLS = JSON.parse(localStorage.getItem('products')) || [];
-
-console.log(productos)
-
 function renderizarProductos(products) {
-
-    cardContainer.innerHTML = ``;
-    products.forEach((product, index) => {
-
-
-        const card = document.createElement('article');
-        card.classList.add('card');
-
-        card.innerHTML = `
-        <div class="card__header">
-   
-                        <img src="${product.imagen}" alt="${product.nombre}" class="card__img">
-
-                        </div>
-                    <div class="card__body">
-                        <div class="card__title">
-                        ${product.nombre}
-                        </div>
-                        <p class="card__description">
-                        ${product.descripcion}
-                        </p>
-                        <h3 class="card__price">
-                            $ ${product.precio}
-                        </h3>
-                    </div>
-                    <div class="card__footer">
-                        <div class="card__date">
-                            13/12/2022
-                        </div>
-                        <div class="card__btn-container">
-                            <a class="crad__btn" href="/pages/product-detail/product-detail.html?id=${index + 1}">|
-                                AÑADIR AL CARRITO
-                            </a>
-                        </div>
-                    </div>`;
-
-        // Agrega la tarjeta al contenedor
-        cardContainer.appendChild(card);
-    });
-
+    const cardContainer = document.querySelector('.section-cards__body');
+    cardContainer.innerHTML = products;
 }
-
-renderizarProductos(productsLS);
-
 
 function filtrarProductos(palabra) {
     const filteredProducts = productsLS.filter(product => {

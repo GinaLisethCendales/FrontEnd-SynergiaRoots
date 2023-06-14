@@ -63,6 +63,17 @@ body {
   color: white;
 }
 
+.card-category {
+  padding: 10px;
+  background-color: #F99417;
+  /* height: 100px; */
+  margin: 20px 0px 10px 0px;
+  font-family: 'GeometosNeueLight';
+  font-size: x-large;
+  border-bottom: 2px solid #c96f00;
+}
+
+
 .card {
   display: flex;
   flex-direction: column;
@@ -599,7 +610,7 @@ body {
 }
 
 .container-login{
-  background-color: rgb(0,0,0); /* Fallback color */
+  
   background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
   color: white;
   font-weight: bold;

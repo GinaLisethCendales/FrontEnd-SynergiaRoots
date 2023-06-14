@@ -1,8 +1,8 @@
 // config
 
 const config = {
-    //apiUrl: 'https://backend-synergiaroots.onrender.com',
-    apiUrl: 'http://localhost:8090',
+    apiUrl: 'https://backend-synergiaroots.onrender.com',
+    //apiUrl: 'http://localhost:8090',
 };
 
 // backend 
